@@ -3,9 +3,13 @@ import zipfile, time
 from selenium import webdriver
 
 #check OS version: 'linux2' ,'win32' or 'darwin'(MAC)
+print "Downloading dataset...\n (... it may open a chrome window, please dont close it ...)"
 version = sys.platform
 extension = ""
 if version == 'linux2':
+    from pyvirtualdisplay import Display #headless browser available only in Linux
+    display = Display(visible=0, size=(800, 600))
+    display.start()
     if sys.maxsize > 2**32: #it is then 64 bits
         webdriver_url = 'https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip'
     else:
@@ -32,8 +36,6 @@ zip_ref.close()
 
 #Configure selenium
 chromedriver =  os.getcwd()+'/'+chromename
-os.environ["webdriver.chrome.driver"] = chromedriver
-
 chromeOptions = webdriver.ChromeOptions()
 prefs = {"download.default_directory" : os.getcwd()+'/'}
 chromeOptions.add_experimental_option("prefs",prefs)
@@ -45,15 +47,16 @@ driver.get(TRAINING_SET_URL)
 driver.find_element_by_link_text("download now").click();
 
 #Wait to download to complete
-
 file_path = os.getcwd() + "/MIT-CBCL-facerec-database.zip"
 while not os.path.exists(file_path):
     time.sleep(1)
+    if os.path.exists(file_path+".crdownload"):
+        statinfo = os.stat(file_path+".crdownload")
+        print "{}%".format(int (statinfo.st_size/121643276.0*100))
 
-
-print "Done!!"
+print "DONE"
 driver.quit()
+if version == 'linux2':
+    display.stop()
 os.remove(chromename)
 os.remove("chromedriver.zip")
-
-

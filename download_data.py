@@ -4,12 +4,14 @@ from selenium import webdriver
 
 #check OS version: 'linux2' ,'win32' or 'darwin'(MAC)
 version = sys.platform
+extension = ""
 if version == 'linux2':
     if sys.maxsize > 2**32: #it is then 64 bits
         webdriver_url = 'https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip'
     else:
         webdriver_url = 'https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux32.zip'
 elif version == 'win32':
+    extension = ".exe"
     webdriver_url = 'https://chromedriver.storage.googleapis.com/2.29/chromedriver_win32.zip'
 elif version == 'darwin':
     webdriver_url = 'https://chromedriver.storage.googleapis.com/2.29/chromedriver_mac64.zip'
@@ -23,17 +25,17 @@ chromedrive.retrieve(webdriver_url, "chromedriver.zip")
 #Extract it, chmod to +x and delete zip
 zip_ref = zipfile.ZipFile("chromedriver.zip", 'r')
 zip_ref.extractall()
-st = os.stat('chromedriver')
-os.chmod("chromedriver", st.st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
+chromename = 'chromedriver'+extension
+st = os.stat(chromename)
+os.chmod(chromename, st.st_mode | stat.S_IEXEC | stat.S_IXGRP | stat.S_IXOTH)
 zip_ref.close()
-os.remove("chromedriver.zip")
 
 #Configure selenium
-chromedriver =  os.getcwd()+'/chromedriver'
+chromedriver =  os.getcwd()+'/'+chromename
 os.environ["webdriver.chrome.driver"] = chromedriver
 
 chromeOptions = webdriver.ChromeOptions()
-prefs = {"download.default_directory" : os.getcwd()}
+prefs = {"download.default_directory" : os.getcwd()+'/'}
 chromeOptions.add_experimental_option("prefs",prefs)
 driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chromeOptions)
 
@@ -48,9 +50,10 @@ file_path = os.getcwd() + "/MIT-CBCL-facerec-database.zip"
 while not os.path.exists(file_path):
     time.sleep(1)
 
-if os.path.isfile(file_path):
-    print "Done!!"
-    os.remove("chromedriver")
-    driver.quit()
-else:
-    raise ValueError("%s isn't a file!" % file_path)
+
+print "Done!!"
+driver.quit()
+os.remove(chromename)
+os.remove("chromedriver.zip")
+
+

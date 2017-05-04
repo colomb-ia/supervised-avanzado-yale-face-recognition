@@ -87,7 +87,7 @@ Para descargar los datos ejecuta el comando
 ```bash
 dataget get yale-face-rec
 ```
-Esto descarga los archivos en la carpeta `.dataget/data`, los divide en los conjuntos `training-set` y `test-set`, convierte las imagenes en `jpg` de dimensiones `32x32`. Las originalmente vienen en formato `.pgm` con dimensiones `168x192`. Si deseas mantener el formato original ejecuta en vez
+Esto descarga los archivos en la carpeta `.dataget/data`, los divide en los conjuntos `training-set` y `test-set`, convierte las imagenes en `jpg` de dimensiones `32x32`. Las imágenes originalmente vienen en formato `.pgm` con dimensiones `168x192`. Si deseas mantener el formato original ejecuta en vez
 
 ```bash
 dataget get --dont-process yale-face-rec

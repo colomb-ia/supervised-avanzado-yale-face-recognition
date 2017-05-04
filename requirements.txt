@@ -1,0 +1,6 @@
+pillow
+scipy
+numpy
+jupyter
+matplotlib
+dataget==0.1.4

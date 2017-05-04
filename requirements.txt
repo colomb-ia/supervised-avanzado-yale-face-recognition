@@ -1,6 +1,7 @@
 pillow
 scipy
 numpy
+pandas
 jupyter
 matplotlib
 dataget==0.1.4

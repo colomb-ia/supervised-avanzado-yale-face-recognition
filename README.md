@@ -71,9 +71,10 @@ cd supervised-intermedio-yale-face-recognition
 ### Requerimientos
 Para descargar y visualizar los datos necesitas Python 2 o 3. Las dependencias las puedes encontrar en el archivo `requirements.txt`, el cual incluye
 * pillow
-* dataget
+* pandas
 * numpy
 * jupyter
+* dataget
 
 Puedes instalarlas fácilmente utilizando el commando
 

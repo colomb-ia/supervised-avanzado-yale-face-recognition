@@ -40,8 +40,8 @@ score = n_aciertos / n_imagenes * 100
 ```
 donde `n_aciertos` es el numero de imagenes clasificadas de forma correcta y `n_imagenes` es el numero total de imagenes en el `test-set`.
 
-### Notas Teoricas
-* Es usual resolver problemas de imágenes [redes neuronales](https://en.wikipedia.org/wiki/Artificial_neural_network). Sin embargo, algoritmos menos potentes pueden ser usados con buenos resultados en este tipo de dataset, por ejemplo haciendo uso de algoritmos tipo [Nearest neighbor search](https://en.wikipedia.org/wiki/Nearest_neighbor_search) teniendo representadas las imágenes en otro espacio vectorial, como [PCA](https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales), [Linear Discriminant Analysis (LDA)](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) o usando [Local Binary Patterns Histograms](https://en.wikipedia.org/wiki/Local_binary_patterns).
+### Notas Teóricas
+* Es usual resolver problemas de imágenes con [redes neuronales](https://en.wikipedia.org/wiki/Artificial_neural_network). Sin embargo, algoritmos menos potentes pueden ser usados con buenos resultados en este tipo de dataset, por ejemplo haciendo uso de algoritmos tipo [Nearest neighbor search](https://en.wikipedia.org/wiki/Nearest_neighbor_search) teniendo representadas las imágenes en otro espacio vectorial, como [PCA](https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales), [Linear Discriminant Analysis (LDA)](https://en.wikipedia.org/wiki/Linear_discriminant_analysis) o usando [Local Binary Patterns Histograms](https://en.wikipedia.org/wiki/Local_binary_patterns).
 
 ### Solución
 Ver procedimiento de [solución](https://github.com/colomb-ia/formato-retos#solucion)

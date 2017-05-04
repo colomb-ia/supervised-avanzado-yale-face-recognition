@@ -1,15 +1,15 @@
 # Reto Yale Face Recognition
 ## Descripción
-El [Extended Yale Face Database](http://vision.ucsd.edu/~leekc/ExtYaleDatabase/ExtYaleB.html) es un conjunto de 2696 imágenes de caras de 39 personas distintas, con diferentes poses e iluminación. Las imagenes fueron recortadas, centradas y alineadas manualmente para mostrar únicamente rostros de las personas. El tamaño por defecto es 168x192.
+El [Yale Face Database](http://vision.ucsd.edu/~leekc/ExtYaleDatabase/ExtYaleB.html) es un conjunto de 2696 imágenes de caras de 39 personas distintas, con diferentes poses e iluminación. Las imagenes fueron recortadas, centradas y alineadas manualmente para mostrar únicamente rostros de las personas. El tamaño por defecto es 168x192.
 
 ![alt text][s1]
 
 El reto es construir un clasificador de imágenes que sea capaz de reconocer las 39 personas.
 
 ### Formato Datos
-Todos los datos viven en la carpeta `.dataget/data` y se dividen en 2 grupos
+Todos los datos están en la carpeta `.dataget/data/yale-face-rec` y se dividen en 2 grupos
 ```
-|- .datageterman Traffic Signs
+|- .dataget
    |- data
       |- yale-face-rec
          |- traning-set
@@ -71,6 +71,7 @@ cd supervised-avanzado-mnist
 ### Requerimientos
 Para descargar y visualizar los datos necesitas Python 2 o 3. Las dependencias las puedes encontrar en el archivo `requirements.txt`, el cual incluye
 * pillow
+* dataget
 * numpy
 * jupyter
 

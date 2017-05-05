@@ -65,8 +65,8 @@ Ver procedimiento de [solución](https://github.com/colomb-ia/formato-retos#solu
 Para resolver este reto primero has un [fork](https://help.github.com/articles/fork-a-repo/) de este repositorio y [clona](https://help.github.com/articles/cloning-a-repository/) el fork en tu maquina.
 
 ```bash
-git clone https://github.com/{username}/supervised-intermedio-yale-face-recognition
-cd supervised-intermedio-yale-face-recognition
+git clone https://github.com/{username}/supervised-avanzado-yale-face-recognition
+cd supervised-avanzado-yale-face-recognition
 ```
 
 *Nota: reemplaza `{username}` con tu nombre de usuario de Github.*

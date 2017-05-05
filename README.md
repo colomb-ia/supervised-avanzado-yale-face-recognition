@@ -6,6 +6,9 @@ El [Yale Face Database](http://vision.ucsd.edu/~leekc/ExtYaleDatabase/ExtYaleB.h
 
 El reto es construir un clasificador de imágenes que sea capaz de reconocer las 39 personas.
 
+### Ranking
+Ver [ranking](https://github.com/charlielito/supervised-intermedio-yale-face-recognition/blob/master/ranking.md).
+
 ### Formato Datos
 Todos los datos están en la carpeta `.dataget/data/yale-face-rec` y se dividen en 2 grupos
 ```
@@ -104,10 +107,5 @@ jupyter notebook .
 ```
 y abrir el archivo `python-sample.ipynb`.
 
-
-# Soluciones
-| Score | Usuario |	Algoritmo | Link Repo |
-| - | - | - | - |
-| *score* | *nombre* | *algoritmo* | *link* |
 
 [s1]: http://vision.ucsd.edu/~leekc/ExtYaleDatabase/images/ExpImgs.png "S"
